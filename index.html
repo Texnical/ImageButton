@@ -1,0 +1,44 @@
+<html>
+<head>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#imagecontainer {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#image {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#heartadd {
+	display: none;
+}
+
+#heartadd:hover {
+	background: transparent url('heart_add.png') no-repeat;
+}
+</style>
+<script type="text/javascript" src="imagehelper.js"></script>
+</head>
+<body>
+
+<div id="imagecontainer" style="position: relative; top: 0; left: 0;">
+	<img src="image.php" id="image" onmousedown="updateImage()" onmouseup="reload()" onmouseout="reload()" onmousemove="reload()" />
+	<img width="32" height="32" id="heartadd" style="position: absolute; top: 35px; left: 31px;" />
+</div>
+
+<form id="imageform" action="imagehandler.php" target="imagehandler" type="post" onsubmit="reload()" >
+</form>
+
+<iframe name="imagehandler" style="display: none;"></iframe>
+
+</body>
+</html>
